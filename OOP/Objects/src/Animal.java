@@ -16,7 +16,6 @@
  *  sleep()- prints that the Animal is sleeping
  *  toString()- overrides the implementation of toString() and returns a String representation of the Animals objects
  */
-package Assignment1;
 
 /**
  *

@@ -19,13 +19,12 @@
  *  scratch()- prints that the Cat scratches
  *  sound()- prints a sound that a Cat makes
  */
-package Assignment1;
 
 /**
  *
  * @author danie
  */
-public class Cat extends Assignment1.Animal implements Domesticated, Scratcher
+public class Cat extends Animal implements Domesticated, Scratcher
 {
     //Constructors for my Cat class. Uses the superconstructor from Animal Class
     public Cat()

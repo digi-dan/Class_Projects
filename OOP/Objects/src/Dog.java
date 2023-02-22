@@ -21,13 +21,12 @@
  *  walk()- prints that the dog is walking
  *  sound()- prints the sound a Dog makes
  */
-package Assignment1;
 
 /**
  *
  * @author danie
  */
-public class Dog extends Assignment1.Animal implements Domesticated
+public class Dog extends Animal implements Domesticated
 {
     public Dog()    //Default constructor for a Dog
     {

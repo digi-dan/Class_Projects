@@ -13,7 +13,6 @@
  *  
  *  Executes when file is ran
  */
-package Assignment1;
 
 public class AnimalTest 
 {
