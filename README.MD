@@ -1,1 +1,2 @@
 These files are projects I worked on while my time as a student. Some of the files have been modified, since my final submission for grading, for better readability and utilization. These are examples of what I have learned from my courses but not examples of what I know fully.
+One of my objectives for this repository is to completely use the command line to push, edit, create, and possibly delete files
