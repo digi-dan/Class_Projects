@@ -5,6 +5,7 @@
  *  @author Danny Garcia
  *  @version 1.0
  *  @since 2022-2-22
+ *  Last modified date: 02/22/2023
  * 
  *  This is a class called Animal.java class
  *  This class has a constructor which instantiates an Animal object, setters, getters, and basic functions of an Animal
@@ -17,10 +18,6 @@
  *  toString()- overrides the implementation of toString() and returns a String representation of the Animals objects
  */
 
-/**
- *
- * @author danie
- */
 public class Animal 
 {
     //attributes for the Animal class

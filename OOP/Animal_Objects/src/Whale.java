@@ -7,6 +7,7 @@
  *  @author Danny Garcia
  *  @version 1.0
  *  @since 2022-2-22
+ *  Last modified Date: 02/22/2023
  *
  *  This is a subclass called Whale.java
  *  This is a subclass of Animal.java and gains all the attributes of a generic Animal
@@ -16,13 +17,8 @@
  *  Along with the functions it gains from the Animal class, functions include:
  *  swim()- Prints that the Whale is swimming
  */
-package Assignment1;
 
-/**
- *
- * @author danie
- */
-public class Whale extends Assignment1.Animal implements Swimmer
+public class Whale extends Animal implements Swimmer
 {
     //Constructors for the Whale class. Gets the super constructor from the Animal parent class
     public Whale()  //default constructor

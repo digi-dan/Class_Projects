@@ -7,6 +7,7 @@
  *  @author Danny Garcia
  *  @version 1.0
  *  @since 2022-2-22
+ *  Last modified Date: 02/22/2023
  *  
  *  This is a subclass called Racoon.java
  *  This is a subclass of Animal.java and gains all the attributes of a generic animal
@@ -16,13 +17,8 @@
  *  Along with the functions it gains from the Animal class functions also include:
  *  scratch()- prints that the Racoon scratches
  */
-package Assignment1;
 
-/**
- *
- * @author danie
- */
-public class Racoon extends Assignment1.Animal implements Scratcher
+public class Racoon extends Animal implements Scratcher
 {
     //Constructors for the Racoon class. Uses the super constructor from the Animal class
     public Racoon() //default constructor

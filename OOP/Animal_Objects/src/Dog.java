@@ -7,6 +7,7 @@
  *  @author Danny Garcia
  *  @version 1.0
  *  @since 2022-2-22
+ *  Last modified date: 02/22/2023
  *  
  *  This is a subclass called Dog.java
  *  This subclass extends Animal class and gains all the attributes of a generic Animal
@@ -22,10 +23,6 @@
  *  sound()- prints the sound a Dog makes
  */
 
-/**
- *
- * @author danie
- */
 public class Dog extends Animal implements Domesticated
 {
     public Dog()    //Default constructor for a Dog

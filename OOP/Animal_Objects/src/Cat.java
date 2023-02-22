@@ -7,6 +7,7 @@
  *  @author Danny Garcia
  *  @version 1.0
  *  @since 2022-2-22
+ *  Last modified Date: 02/22/2023
  * 
  *  This is a subclass called Cat.java
  *  This is a subclass of Animal.java class and gains all the attributes of a generic animal
@@ -20,10 +21,6 @@
  *  sound()- prints a sound that a Cat makes
  */
 
-/**
- *
- * @author danie
- */
 public class Cat extends Animal implements Domesticated, Scratcher
 {
     //Constructors for my Cat class. Uses the superconstructor from Animal Class

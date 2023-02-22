@@ -5,6 +5,7 @@
  *  @author Danny Garcia
  *  @version 1.0
  *  @since 2022-2-22
+ *  Last modified Date: 02/22/2023
  * 
  *  This is an interface called Domesticated.java
  *  This interface has functions used for a Domesticated object
@@ -12,12 +13,7 @@
  *  walk()
  *  greetHuman()
  */
-package Assignment1;
 
-/**
- *
- * @author danie
- */
 public interface Domesticated 
 {
     //Functions
