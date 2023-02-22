@@ -5,6 +5,7 @@
  *  @author Danny Garcia
  *  @version 1.0
  *  @since 2022-2-22
+ *  Last modified Date: 02/22/2023
  * 
  *  This main class is called AnimalTest.java 
  *  It instantiates a Dog, Cat, Racoon, and Whale object while also calling
@@ -14,10 +15,6 @@
  */
 package Assignment1;
 
-/**
- *
- * @author danie
- */
 public class AnimalTest 
 {
     public static void main(String[] args) 
