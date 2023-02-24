@@ -21,7 +21,7 @@ public class AnimalTest
         Dog d1 = new Dog("Dog", "Xander", 3, "Male", "House", "12 mph");   //Instantiates a Dog object
         d1.move();  //Prints that the dog is moving
         d1.sound(); //Prints a sound that a dog makes
-        d1.eat();   //Prints that the Dog is eatiing
+        d1.eat();   //Prints that the Dog is eating
         d1.sleep(); //Prints that the dog is sleeping
         d1.walk();  //Prints that the dog is walking
         d1.greetHuman();    //Prints that the dog greets a human
