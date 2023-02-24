@@ -18,7 +18,7 @@ public class AnimalTest
 {
     public static void main(String[] args) 
     {
-        Dog d1 = new Dog("Dog", "Xander", 3, "Male", "House", "12 miles/hr");   //Instantiates a Dog object
+        Dog d1 = new Dog("Dog", "Xander", 3, "Male", "House", "12 mph");   //Instantiates a Dog object
         d1.move();  //Prints that the dog is moving
         d1.sound(); //Prints a sound that a dog makes
         d1.eat();   //Prints that the Dog is eatiing
@@ -28,7 +28,7 @@ public class AnimalTest
         d1.bark();  //Prints that the dog is barking
         System.out.println("\n");
         
-        Cat c1 = new Cat("Cat", "Stella", 5, "Female", "House", "10 miles/hr"); //Instantiates a Cat object
+        Cat c1 = new Cat("Cat", "Stella", 5, "Female", "House", "10 mph"); //Instantiates a Cat object
         c1.move();  //Prints that the Cat is moving
         c1.sound(); //Prints a sound that a cat makes
         c1.eat();   //Prints that the cat is eating
@@ -38,7 +38,7 @@ public class AnimalTest
         c1.scratch();   //Prints that the cat scratches
         System.out.println("\n");
         
-        Racoon r1 = new Racoon("Racoon", "Trashy", 10, "Male", "forest", "6 miles/hr"); //Instantiates a Racoon object
+        Racoon r1 = new Racoon("Racoon", "Trashy", 10, "Male", "forest", "6 mph"); //Instantiates a Racoon object
         r1.move();  //Prints that the racoon is moving
         r1.sound(); //Prints that the racoon makes a sound
         r1.eat();   //Prints that the racoon is eating
@@ -46,7 +46,7 @@ public class AnimalTest
         r1.scratch();   //Prints that the racoon scratches
         System.out.println("\n");
         
-        Whale w1 = new Whale("Whale", "Big Chungus", 32, "Female", "ocean", "20 miles/hr"); //Instantiates a Whale object
+        Whale w1 = new Whale("Whale", "Big Chungus", 32, "Female", "ocean", "20 mph"); //Instantiates a Whale object
         w1.move();  //Prints that the whale is moving
         w1.sound(); //Prints that the whale is making a sound
         w1.eat();   //Prints that the whale is eating
