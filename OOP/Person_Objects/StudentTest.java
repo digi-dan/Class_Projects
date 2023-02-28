@@ -1,21 +1,17 @@
-/*Assignment1 Program
+/*
     StudentTest.java main class
 
     @author Danny Garcia
     @version 1.0
     @since 2022-2-22
+    Last modified date: 2/28/2023
 
     This main class is called StudentTest.java. Main instaniates a Student object
     and prints out a Course Schedule for the Student
 
     Executes when you run the program
 */
-package Assignment1;
 
-/**
- *
- * @author danie
- */
 public class StudentTest 
 {
     public static void main(String[] args) 
