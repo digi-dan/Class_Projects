@@ -5,6 +5,7 @@
  *  @author Danny Garcia
  *  @version 1.0
  *  @since 2022-2-22
+ *  Last Modified Date: 2/28/2023
  * 
  *  This is a class called Person.java
  *  Class has constructors in order to instantiate a Person object
@@ -15,7 +16,6 @@
  * 
  *  Executes when EmployeeTest.java is run
  */
-package Assignment1;
 
 /**
  *
