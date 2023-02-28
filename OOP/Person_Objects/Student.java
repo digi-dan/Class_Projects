@@ -5,6 +5,7 @@
  * @author Danny Garcia
  * @version 1.0
  * @since 2022-2-22
+ * Last Modified Date: 2/28/2023
  * 
  * This is a class called Student.java
  * Class has constructors in order to instantiate a Student object
@@ -16,12 +17,6 @@
  *  Executes when StudentTest.java is run
  */
 
-package Assignment1;
-
-/**
- *
- * @author danie
- */
 public class Student 
 {
     //These are the variables used for the Student class

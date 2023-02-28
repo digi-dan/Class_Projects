@@ -17,10 +17,6 @@
  *  Executes when EmployeeTest.java is run
  */
 
-/**
- *
- * @author danie
- */
 public class Person 
 {
     //These are the variables used for Person class
