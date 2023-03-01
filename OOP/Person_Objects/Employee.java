@@ -21,12 +21,7 @@
  * 
  *  Executes when EmployeeTest.java is run
  */
-package Assignment1;
 
-/**
- *
- * @author danie
- */
 public class Employee extends Assignment1.Person
     {
         /*Variables used for the Employee class
