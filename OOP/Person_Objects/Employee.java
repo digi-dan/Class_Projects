@@ -6,6 +6,7 @@
  *  @author Danny Garcia
  *  @version 1.0
  *  @since 2022-2-22
+ *  Last Modified Date: 3/1/2023
  * 
  *  This is a subclass called Employee.java
  *  This class extends Person class and gains all of its attributes since an employee is a person
