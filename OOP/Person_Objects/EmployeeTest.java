@@ -12,12 +12,7 @@
  * 
  *  Executes when file is ran
  */
-package Assignment1;
 
-/**
- *
- * @author danie
- */
 public class EmployeeTest 
 {
     public static void main(String[] args) 
