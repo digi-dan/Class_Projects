@@ -11,11 +11,10 @@
  *  Author name: Danny Garcia
  *  Author email: danny.garcia@sjsu.edu
  *  Creation Date: 03/22/2023
- *  Last modified date: 03/23/2023
+ *  Last modified date: 03/24/2023
  */
 
 import java.util.*;
-import java.io.*;
 
 public class Decrypt_Code {
     /**
