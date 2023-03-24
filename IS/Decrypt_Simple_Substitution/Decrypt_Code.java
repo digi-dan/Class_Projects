@@ -43,12 +43,18 @@ public class Decrypt_Code {
     }
     public static void main(String[] args) {
         int i = 0;
+        boolean encrypted = true;
+
         //Scanner object for input stream
         Scanner input = new Scanner(System.in);
-
+        // Set the data structure for key to be outputted
+        Character[] alphabet = {'a', 'b', 'c', 'd', 'e', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+        Map<Character, Character> key = new HashMap<Character, Character>();
+        for(Character ch: alphabet){
+            key.put(ch, null);
+        }
         // List of common english letters from most frequent to the least frequent
         Character[] commonChar = {'e', 'a', 'r', 'i', 'o', 't', 'n', 's', 'l', 'c', 'u', 'd', 'p', 'm', 'h', 'g', 'b', 'f', 'y', 'w', 'k', 'v', 'x', 'z', 'j', 'q'};
-        boolean encrypted = true;
         LinkedList<Character> commonList = new LinkedList<Character>(Arrays.asList(commonChar));
 
         System.out.print("Enter ciphertext below:\n");
@@ -80,10 +86,16 @@ public class Decrypt_Code {
                 System.out.print(entry.getValue() + "   ");
             }
         }
-        System.out.print("\n--------------------------------------------------------------------------------------------------------------");
-        while(encrypted){
 
-            Map.Entry<Character, Integer> entry = freqList.iterator().next();
+        while(encrypted){
+            System.out.print("\n--------------------------------------------------------------------------------------------------------------");
+            Iterator<Map.Entry<Character, Integer>> iter = freqList.iterator();
+            Map.Entry<Character, Integer> entry = iter.next();
+
+            if(entry.getValue().equals(0)){
+                encrypted = false;
+            }
+
 
             System.out.print("\nSuggested key for '" + entry.getKey() + "': " + commonList.get(i) + " or " + commonList.get(i+1));
             System.out.println("\nEnter in your guess for the key of only one letter, in the format: (Encrypted Character) (Guessed key):");
@@ -91,6 +103,8 @@ public class Decrypt_Code {
             cipherChar = Character.toUpperCase(cipherChar);
 
             char replacement = input.next().charAt(0);
+            replacement = Character.toLowerCase(replacement);
+
             System.out.print("You entered " + cipherChar + " to be replaced by " + replacement);
             cipherText = cipherText.replace(cipherChar, replacement);
             freqList = countFreq(cipherText);
@@ -117,7 +131,55 @@ public class Decrypt_Code {
                 }
             }
 
-            encrypted = false;
+            boolean keep = true;
+            System.out.print("\nDo you want to keep changes? Y/N: ");
+            String change = input.next();
+            change = change.toUpperCase();
+            if(change.equals("N")){
+                // Revert changes
+                commonList.add(index, replacement);
+                cipherText = cipherText.replace(replacement, cipherChar);
+                freqList = countFreq(cipherText);
+                System.out.print("\n" + cipherText);
+                System.out.print("\nplain:  ");
+                for(Character character : commonList) {
+                    System.out.print(character + "   ");
+                }
+                System.out.print("\nCIPHER: ");
+                for(Map.Entry<Character, Integer> entry1 : freqList){
+                    System.out.print(entry1.getKey() + "   ");
+                }
+                System.out.print("\nCount:  ");
+                for(Map.Entry<Character, Integer> entry2 : freqList){
+                    if(entry2.getValue() >= 10){
+                        System.out.print(entry2.getValue() + "  ");
+                    }
+                    else {
+                        System.out.print(entry2.getValue() + "   ");
+                    }
+                }
+            }
+            else if(change.equals("Y")){
+                key.put(replacement, cipherChar);
+                if(iter.next().getValue().equals(0) || !iter.hasNext()){
+                    encrypted = false;
+                    System.out.print("Key:\n");
+                    for(Character k : key.keySet()){
+                        Character value = key.get(k);
+                        if(value != null && Character.isUpperCase(value)){
+                            System.out.print(value);
+                        }
+                    }
+                    System.out.print("\n");
+                    for (Map.Entry<Character, Character> m : key.entrySet()){
+                        Character k = m.getKey();
+                        Character v = m.getValue();
+                        if(v != null && Character.isUpperCase(v)){
+                            System.out.print(k);
+                        }
+                    }
+                }
+            }
         }
 
     }
