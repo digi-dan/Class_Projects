@@ -18,6 +18,14 @@ import java.util.*;
 import java.io.*;
 
 public class Decrypt_Code {
+    /**
+     * Function name: countFreq
+     * Counts the frequency of CAPITAL letters in a given string, sorts the letters
+     * from most frequent to the least frequent and returns the result in an ArrayList
+     * of Hashmap
+     * @param message
+     * @return ArrayList<Map.Entry<Character, Integer>>
+     */
     public static ArrayList<Map.Entry<Character, Integer>> countFreq(String message){
         Map<Character, Integer> freqMap = new HashMap<>();
 
@@ -41,14 +49,16 @@ public class Decrypt_Code {
         freqList.sort(Collections.reverseOrder(Map.Entry.comparingByValue()));
         return freqList;
     }
+
     public static void main(String[] args) {
         int i = 0;
         boolean encrypted = true;
 
         //Scanner object for input stream
         Scanner input = new Scanner(System.in);
-        // Set the data structure for key to be outputted
-        Character[] alphabet = {'a', 'b', 'c', 'd', 'e', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+
+        // Set the data structure for key
+        Character[] alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
         Map<Character, Character> key = new HashMap<Character, Character>();
         for(Character ch: alphabet){
             key.put(ch, null);
@@ -69,6 +79,7 @@ public class Decrypt_Code {
 
 
         // Formatting the table of the output
+        System.out.print("Frequency table (high to low)\n");
         System.out.print("plain:  ");
         for(Character character : commonList) {
             System.out.print(character + "   ");
@@ -92,18 +103,32 @@ public class Decrypt_Code {
             Iterator<Map.Entry<Character, Integer>> iter = freqList.iterator();
             Map.Entry<Character, Integer> entry = iter.next();
 
-            if(entry.getValue().equals(0)){
-                encrypted = false;
-            }
-
-
+            // Give suggestion based on the most frequent letter in ciphertext and the english language
             System.out.print("\nSuggested key for '" + entry.getKey() + "': " + commonList.get(i) + " or " + commonList.get(i+1));
             System.out.println("\nEnter in your guess for the key of only one letter, in the format: (Encrypted Character) (Guessed key):");
+
+            // CipherText character to be replaced will be automatically capitalized
             char cipherChar = input.next().charAt(0);
             cipherChar = Character.toUpperCase(cipherChar);
 
+            // Replacement character will be automatically set to lower case
             char replacement = input.next().charAt(0);
             replacement = Character.toLowerCase(replacement);
+
+            // If no replacement character is given
+            while (replacement == '\0'){
+                System.out.print("Please enter a second letter to be replaced with");
+                replacement = input.next().charAt(0);
+            }
+            while(!commonList.contains(replacement) && !freqList.contains(cipherChar)){
+                System.out.print("Character not found in the list or already inputted, please enter again");
+                cipherChar = input.next().charAt(0);
+                cipherChar = Character.toUpperCase(cipherChar);
+
+                replacement = input.next().charAt(0);
+                replacement = Character.toLowerCase(replacement);
+
+            }
 
             System.out.print("You entered " + cipherChar + " to be replaced by " + replacement);
             cipherText = cipherText.replace(cipherChar, replacement);
@@ -131,15 +156,25 @@ public class Decrypt_Code {
                 }
             }
 
-            boolean keep = true;
+            /**
+             *  Allow user to make multiple changes on the same character
+             *  *Note*: Once changes have been accepted for a character, it cannot be changed back.
+             */
             System.out.print("\nDo you want to keep changes? Y/N: ");
             String change = input.next();
             change = change.toUpperCase();
-            if(change.equals("N")){
+
+            // If unrecognizable command is inputted. Advise user and revert changes back
+            if(change.charAt(0) != 'N' && change.charAt(0) != 'Y'){
+                System.out.print("Please input a correct command");
+                change = "N" + change.substring(1);
+                System.out.print(change);
+            }
+            if(change.charAt(0) == 'N'){
                 // Revert changes
-                commonList.add(index, replacement);
-                cipherText = cipherText.replace(replacement, cipherChar);
-                freqList = countFreq(cipherText);
+                commonList.add(index, replacement); // Add replacement character back to the list
+                cipherText = cipherText.replace(replacement, cipherChar);   // Replace plaintext character back to ciphertext
+                freqList = countFreq(cipherText);   // Update the frequency list with the ciphertext char added back
                 System.out.print("\n" + cipherText);
                 System.out.print("\nplain:  ");
                 for(Character character : commonList) {
@@ -159,11 +194,15 @@ public class Decrypt_Code {
                     }
                 }
             }
-            else if(change.equals("Y")){
+            else if(change.charAt(0) == 'Y'){
+                // Add decrypted text to key hashmap
                 key.put(replacement, cipherChar);
+
+                // If there are no more characters to decrypt after accepting changes
                 if(iter.next().getValue().equals(0) || !iter.hasNext()){
                     encrypted = false;
                     System.out.print("Key:\n");
+                    // Print out key with corresponding letter under it
                     for(Character k : key.keySet()){
                         Character value = key.get(k);
                         if(value != null && Character.isUpperCase(value)){
